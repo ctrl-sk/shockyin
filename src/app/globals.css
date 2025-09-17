@@ -56,11 +56,35 @@
   body {
     @apply bg-background text-foreground;
     cursor: none;
+    padding-top: 200px;
   }
   a, button {
     cursor: none !important;
   }  
   .cursor-pointer {
     cursor: none !important;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    display: inline-block;
+  }
+  .logo h1 {
+    font-size: 4rem;
+    z-index: 2;
+    margin: 0;
+  }
+  .in-text {
+    font-size: 2.8rem;
+    position: absolute;
+    bottom: -14px;
+    right: -26px;
   }
 }
