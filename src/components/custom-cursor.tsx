@@ -4,10 +4,8 @@ import { useEffect } from 'react'
 
 export function CustomCursor() {
   useEffect(() => {
-    // Check if we're in the browser
     if (typeof window === 'undefined') return
 
-    // Wait for DOM to be ready and get computed styles
     const initCursor = () => {
       const existingCursor = document.getElementById('custom-cursor')
       if (existingCursor) {
@@ -31,40 +29,41 @@ export function CustomCursor() {
       cursor.style.borderRadius = '50%'
       cursor.style.pointerEvents = 'none'
       cursor.style.zIndex = '9999'
-      cursor.style.transform = 'translate(-50%, -50%)'
-      cursor.style.transition = 'all 0.1s ease-out'
+      // Remove transition to prevent lag
+      // cursor.style.transition = 'all 0.1s ease-out'
       cursor.style.opacity = '1'
       cursor.style.left = '0px'
       cursor.style.top = '0px'
       cursor.style.display = 'block'
       cursor.style.userSelect = 'none'
+
+      // Use will-change for better GPU optimization
+      cursor.style.willChange = 'transform'
     
-      document.body.style.cursor = 'none' // Hide default pointer initially
+      document.body.style.cursor = 'none'
       document.body.appendChild(cursor)
     
       const updateCursor = (e: MouseEvent) => {
-        cursor.style.left = e.clientX + 'px'
-        cursor.style.top = e.clientY + 'px'
+        // Use transform translate3d for smoother movement instead of left/top
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`
       }
     
       const handleMouseEnter = (e: MouseEvent) => {
         const target = e.target as HTMLElement
     
-        // On clickable elements, hide default cursor so only custom cursor shows
         if (
           target.tagName === 'A' ||
           target.tagName === 'BUTTON' ||
           target.closest('button') ||
           target.closest('a')
         ) {
-          cursor.style.transform = 'translate(-50%, -50%) scale(1)'
           cursor.style.backgroundColor = primaryColor ? `hsl(${primaryColor})` : defaultPrimary
           cursor.style.borderRadius = '50%'
           cursor.style.width = '16px'
           cursor.style.height = '16px'
-          document.body.style.cursor = 'none' // Hide default cursor completely
+          document.body.style.cursor = 'none'
+          target.style.cursor = 'none'
         }
-        // Text elements – bigger rectangular cursor, also hide default cursor
         else if (
           target.tagName === 'P' ||
           target.tagName === 'SPAN' ||
@@ -80,14 +79,12 @@ export function CustomCursor() {
           target.tagName === 'LABEL' ||
           target.closest('p, span, h1, h2, h3, h4, h5, h6, li, td, th, label')
         ) {
-          cursor.style.transform = 'translate(-50%, -50%) scale(1)'
           cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent
           cursor.style.borderRadius = '2px'
           cursor.style.width = '2px'
           cursor.style.height = '24px'
           document.body.style.cursor = 'none'
         }
-        // Input and textarea: hide custom cursor, show default
         else if (
           target.tagName === 'INPUT' ||
           target.tagName === 'TEXTAREA' ||
@@ -97,8 +94,6 @@ export function CustomCursor() {
           document.body.style.cursor = ''
         }
         else {
-          // Default fallback
-          cursor.style.transform = 'translate(-50%, -50%) scale(1)'
           cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent
           cursor.style.borderRadius = '50%'
           cursor.style.width = '16px'
@@ -108,14 +103,15 @@ export function CustomCursor() {
         }
       }
     
-      const handleMouseLeave = (_e: MouseEvent) => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)'
+      const handleMouseLeave = (e: MouseEvent) => {
+        const target = e.target as HTMLElement
         cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent
         cursor.style.borderRadius = '50%'
         cursor.style.width = '16px'
         cursor.style.height = '16px'
         cursor.style.opacity = '1'
         document.body.style.cursor = ''
+        target.style.cursor = ''
       }
     
       document.addEventListener('mousemove', updateCursor)
