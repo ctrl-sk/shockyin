@@ -6,6 +6,10 @@ export function CustomCursor() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
+    // Detect if device has touch support and skip custom cursor on touchscreens
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (isTouchDevice) return
+
     const initCursor = () => {
       const existingCursor = document.getElementById('custom-cursor')
       if (existingCursor) {
@@ -29,22 +33,17 @@ export function CustomCursor() {
       cursor.style.borderRadius = '50%'
       cursor.style.pointerEvents = 'none'
       cursor.style.zIndex = '9999'
-      // Remove transition to prevent lag
-      // cursor.style.transition = 'all 0.1s ease-out'
       cursor.style.opacity = '1'
       cursor.style.left = '0px'
       cursor.style.top = '0px'
       cursor.style.display = 'block'
       cursor.style.userSelect = 'none'
-
-      // Use will-change for better GPU optimization
       cursor.style.willChange = 'transform'
     
       document.body.style.cursor = 'none'
       document.body.appendChild(cursor)
     
       const updateCursor = (e: MouseEvent) => {
-        // Use transform translate3d for smoother movement instead of left/top
         cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`
       }
     
@@ -141,7 +140,8 @@ export function CustomCursor() {
         cursorElement.parentNode.removeChild(cursorElement)
       }
       document.body.style.cursor = ''
-    }    
+    }
+    
   }, [])
 
   return null
