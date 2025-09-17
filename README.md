@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
+
+A modern, responsive personal portfolio website built with Next.js, TypeScript, and shadcn/ui components.
+
+## Features
+
+- 🌙 **Dark/Light Mode**: Toggle between themes with a beautiful sun/moon icon
+- 📱 **Responsive Design**: Optimized for all device sizes
+- 🎨 **Modern UI**: Built with shadcn/ui components and Tailwind CSS with Rose theme
+- 🧭 **Bottom Navigation**: Easy navigation between sections with white borders
+- 🎬 **Film Grain Effect**: Subtle animated film grain texture for enhanced visual appeal
+- 📄 **Multiple Pages**: Home, Work, Tools, Notes, and Contact
+- 🎭 **Modal System**: Interactive modals for blog posts and tool details
+- ✉️ **Email Integration**: Working contact form with Nodemailer
+- 🌫️ **Content Fade**: Smooth content fade-out behind navigation
+
+## Pages
+
+### Home
+- Personal logo and tagline
+- Three descriptive paragraphs about you
+- Clean, focused design with max-width of 640px
+
+### Work
+- Professional experience timeline
+- Company information with emoji logos
+- Technology stacks for each position
+- Card-based layout with hover effects
+
+### Tools
+- 2x3 grid of utility tools (2 columns, 3 rows)
+- Clickable cards that open detailed modals
+- Interactive hover animations
+- Compact design optimized for 640px width
+- Modal includes features, instructions, and direct links to tools
+
+### Notes
+- Blog-style layout for articles
+- Post metadata (date, read time, tags)
+- Clickable entries that open full blog posts in modals
+- Rich content with detailed articles on web development topics
+- Clean typography and spacing
+
+### Contact
+- Functional contact form that sends emails to shashank8kumar@gmail.com
+- Name, Email, and Comments fields with validation
+- Real-time form submission with loading states
+- Success/error feedback
+- Additional contact information and social links
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Theme**: next-themes for dark/light mode
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Set up environment variables:
+Create a `.env.local` file in the root directory with the following variables:
+```bash
+SMTP_EMAIL=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Note**: For Gmail, you'll need to:
+- Enable 2-Step Verification
+- Generate an App Password (Google Account Settings > Security > App passwords)
+- Use the App Password instead of your regular password
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Colors and Theme
+The app uses CSS variables for theming. You can customize colors in `src/app/globals.css`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```css
+:root {
+  --primary: 240 9% 9%;
+  --secondary: 240 4.8% 95.9%;
+  /* ... other color variables */
+}
+```
 
-## Deploy on Vercel
+### Content
+- Update personal information in `src/app/page.tsx` (Home page)
+- Modify work experience in `src/app/work/page.tsx`
+- Add tools in `src/app/tools/page.tsx`
+- Create blog posts in `src/app/notes/page.tsx`
+- Update contact information in `src/app/contact/page.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Navigation
+Edit the navigation items in `src/components/bottom-nav.tsx`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```typescript
+const navItems = [
+  { name: "Home", href: "/", icon: Home },
+  // Add or modify navigation items
+]
+```
+
+## Deployment
+
+The app is ready to deploy on Vercel, Netlify, or any platform that supports Next.js.
+
+```bash
+npm run build
+npm start
+```
+
+## License
+
+MIT License - feel free to use this template for your own portfolio!
