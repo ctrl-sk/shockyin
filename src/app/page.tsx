@@ -18,9 +18,9 @@ export default function Home() {
             About Me
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            I'm a passionate full-stack developer with a love for creating elegant solutions to complex problems. 
+            I&apos;m a passionate full-stack developer with a love for creating elegant solutions to complex problems. 
             With experience spanning from frontend frameworks to backend architectures, I enjoy building applications 
-            that make a real difference in people's lives. My journey in tech has taken me through various domains, 
+            that make a real difference in people&apos;s lives. My journey in tech has taken me through various domains, 
             from e-commerce platforms to data visualization tools.
           </p>
         </div>
@@ -31,8 +31,8 @@ export default function Home() {
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             I specialize in modern web technologies including React, Next.js, Node.js, and TypeScript. 
-            I'm particularly drawn to the intersection of design and functionality, always striving to create 
-            user experiences that are both beautiful and intuitive. Whether it's building responsive interfaces, 
+            I&apos;m particularly drawn to the intersection of design and functionality, always striving to create 
+            user experiences that are both beautiful and intuitive. Whether it&apos;s building responsive interfaces, 
             optimizing performance, or architecting scalable systems, I approach every challenge with curiosity and determination.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function Home() {
             Beyond Code
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+            When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, 
             or sharing knowledge with the developer community. I believe in continuous learning and enjoy diving deep 
             into emerging technologies. I also love documenting my journey and insights, which you can explore in my notes section.
           </p>

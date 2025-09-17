@@ -59,7 +59,7 @@ export default function Contact() {
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold text-primary mb-4">Get In Touch</h1>
         <p className="text-lg text-muted-foreground">
-          Have a project in mind or just want to chat? I'd love to hear from you!
+          Have a project in mind or just want to chat? I&apos;d love to hear from you!
         </p>
       </div>
 
@@ -67,14 +67,14 @@ export default function Contact() {
         <CardHeader>
           <CardTitle>Send me a message</CardTitle>
           <CardDescription>
-            Fill out the form below and I'll get back to you as soon as possible.
+            Fill out the form below and I&apos;ll get back to you as soon as possible.
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSubmitted && (
             <div className="mb-6 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg">
               <p className="text-green-800 dark:text-green-200 font-medium">
-                Thank you for your message! I'll get back to you soon.
+                Thank you for your message! I&apos;ll get back to you soon.
               </p>
             </div>
           )}

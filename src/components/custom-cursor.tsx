@@ -108,7 +108,7 @@ export function CustomCursor() {
         }
       }
     
-      const handleMouseLeave = (e: MouseEvent) => {
+      const handleMouseLeave = (_e: MouseEvent) => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)'
         cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent
         cursor.style.borderRadius = '50%'
