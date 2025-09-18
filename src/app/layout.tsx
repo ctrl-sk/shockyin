@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BottomNav } from "@/components/bottom-nav";
@@ -9,15 +9,15 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
   weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  title: "Shashank - Personal Portfolio",
-  description: "Personal portfolio website showcasing work, tools, and thoughts",
+  title: "shocky.in",
+  description: "Personal portfolio website showcasing work, tools and thoughts | Shashank Kumar",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className="{`${ibmPlexMono.variable} antialiased`} m-0 p-0"
+        className={`${rubik.variable} antialiased m-0 p-0`}
       >
         <ThemeProvider
           attribute="class"
