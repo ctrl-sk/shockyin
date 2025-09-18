@@ -133,6 +133,7 @@ export default function Tools() {
         isOpen={isModalOpen} 
         onClose={handleCloseModal} 
       />
+      <div className="h-[48px]" />
     </div>
   );
 }

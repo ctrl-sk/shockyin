@@ -446,6 +446,7 @@ export default function Notes() {
         isOpen={isModalOpen} 
         onClose={handleCloseModal} 
       />
+      <div className="h-[48px]" />
     </div>
   );
 }

@@ -80,6 +80,7 @@ export default function Work() {
           </Card>
         ))}
       </div>
+      <div className="h-[48px]" />
     </div>
   );
 }

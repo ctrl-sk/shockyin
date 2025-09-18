@@ -123,42 +123,15 @@ export default function Contact() {
 
             <Button 
               type="submit" 
-              className="w-full" 
+              className="w-full rounded-full" 
               disabled={isSubmitting || isSubmitted}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
-
-          <div className="mt-8 pt-6 border-t border-border">
-            <div className="text-center space-y-2">
-              <p className="text-sm text-muted-foreground">
-                Or reach out to me directly:
-              </p>
-              <div className="space-y-1 text-sm">
-                <p>
-                  <span className="font-medium">Email:</span>{" "}
-                  <a href="mailto:hello@shashank.dev" className="text-primary hover:underline">
-                    hello@shashank.dev
-                  </a>
-                </p>
-                <p>
-                  <span className="font-medium">LinkedIn:</span>{" "}
-                  <a href="https://linkedin.com/in/shashank" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                    linkedin.com/in/shashank
-                  </a>
-                </p>
-                <p>
-                  <span className="font-medium">GitHub:</span>{" "}
-                  <a href="https://github.com/shashank" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                    github.com/shashank
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
         </CardContent>
       </Card>
+      <div className="h-[48px]" />
     </div>
   );
 }

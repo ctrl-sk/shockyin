@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${ibmPlexMono.variable} antialiased`}
+        className="{`${ibmPlexMono.variable} antialiased`} m-0 p-0"
       >
         <ThemeProvider
           attribute="class"
@@ -38,15 +38,17 @@ export default function RootLayout({
         >
           <CustomCursor />
           <FilmGrain />
-          <div className="min-h-screen pb-20 relative z-10">
+          <div className="min-h-screen p-0 relative z-10">
             {children}
           </div>
           {/* Fade overlay behind navigation */}
-          <div className="fixed bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-30" />
+          <div className="fixed bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-30" />
           <BottomNav />
           <div className="fixed top-4 right-4 z-50 sm:static sm:ml-auto">
             <ThemeToggle />
           </div>
+          <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

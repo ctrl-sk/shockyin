@@ -31,7 +31,8 @@ const FilmGrain = () => {
       style={{
         backgroundImage: 'url("/noise.png")',
         mixBlendMode: 'overlay',
-        backgroundSize: '1200px 1200px',
+        backgroundSize: '600px 600px',
+        backgroundRepeat: 'repeat',
       }}
     />
   )
