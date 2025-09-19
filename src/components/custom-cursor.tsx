@@ -49,20 +49,25 @@ export function CustomCursor() {
     
       const handleMouseEnter = (e: MouseEvent) => {
         const target = e.target as HTMLElement
-    
         if (
           target.tagName === 'A' ||
-          target.tagName === 'BUTTON' ||
-          target.closest('button') ||
           target.closest('a')
         ) {
-          cursor.style.backgroundColor = primaryColor ? `hsl(${primaryColor})` : defaultPrimary
-          cursor.style.borderRadius = '50%'
-          cursor.style.width = '16px'
-          cursor.style.height = '16px'
-          document.body.style.cursor = 'none'
-          target.style.cursor = 'none'
+          const link = target.tagName === 'A' ? target : target.closest('a')!;
+          const rect = link.getBoundingClientRect();
+        
+          cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent;
+          cursor.style.borderRadius = window.getComputedStyle(link).borderRadius || '4px';
+          cursor.style.width = `${rect.width}px`;
+          cursor.style.height = `${rect.height}px`;
+          cursor.style.opacity = '0.4';
+          cursor.style.transition = 'width 0.3s ease, height 0.3s ease';
+          cursor.style.pointerEvents = 'none';
+          cursor.style.transform = `translate3d(${rect.left + window.scrollX + rect.width / 2}px, ${rect.top + window.scrollY + rect.height / 2}px, 0) translate(-50%, -50%)`;
+          document.body.style.cursor = 'none';
+          target.style.cursor = 'none';
         }
+        
         else if (
           target.tagName === 'P' ||
           target.tagName === 'SPAN' ||
@@ -82,6 +87,7 @@ export function CustomCursor() {
           cursor.style.borderRadius = '2px'
           cursor.style.width = '2px'
           cursor.style.height = '24px'
+          cursor.style.transition = 'width 0.3s ease, height 0.3s ease';
           document.body.style.cursor = 'none'
         }
         else if (
@@ -91,6 +97,7 @@ export function CustomCursor() {
         ) {
           cursor.style.opacity = '0'
           document.body.style.cursor = ''
+          cursor.style.transition = 'none';
         }
         else {
           cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent
@@ -98,6 +105,7 @@ export function CustomCursor() {
           cursor.style.width = '16px'
           cursor.style.height = '16px'
           cursor.style.opacity = '1'
+          cursor.style.transition = 'width 0.3s, height 0.3s';
           document.body.style.cursor = 'none'
         }
       }
@@ -109,6 +117,7 @@ export function CustomCursor() {
         cursor.style.width = '16px'
         cursor.style.height = '16px'
         cursor.style.opacity = '1'
+        cursor.style.transition = 'none';
         document.body.style.cursor = ''
         target.style.cursor = ''
       }

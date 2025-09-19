@@ -31,7 +31,7 @@ const FilmGrain = () => {
       style={{
         backgroundImage: 'url("/noise.webp")',
         mixBlendMode: 'overlay',
-        backgroundSize: '800px 800px',
+        backgroundSize: '880px 880px',
         backgroundRepeat: 'repeat',
       }}
     />

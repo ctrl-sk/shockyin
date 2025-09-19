@@ -26,7 +26,7 @@ export function BottomNav() {
               key={item.name}
               href={item.href}
               className={cn(
-                "flex items-center justify-center rounded-lg px-3 py-2 text-xs font-medium transition-all border border-white/20 hover:border-white/40",
+                "flex items-center justify-center rounded-lg px-3 py-2 text-xs font-medium transition-all border border-gray-300 hover:border-gray-500 dark:border-white/20 dark:hover:border-white/40",
                 isActive
                   ? "text-primary border-primary/50 bg-primary/10"
                   : "text-muted-foreground hover:text-foreground"
