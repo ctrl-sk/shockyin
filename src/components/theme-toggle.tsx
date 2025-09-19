@@ -14,18 +14,18 @@ export function ThemeToggle() {
   }, [])
   if (!mounted) return null
 
-  // checked = dark theme enabled
-  const checked = theme === "dark"
+  // checked = light theme enabled (inverted logic)
+  const checked = theme === "light"
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2 p-2 bg-background/80 rounded-full backdrop-blur-sm border border-white/20 hover:border-white/40">
-      <Sun className="h-3 w-3" />
-      <Switch
+    <div className="fixed md:bottom-4 md:right-4 md:top-auto top-4 right-4 bottom-auto z-50 flex items-center gap-2 p-2 bg-background/80 rounded-full backdrop-blur-sm border border-white/20 hover:border-white/40">
+      <Moon className="h-3 w-3" />
+      <Switch 
         checked={checked}
-        onCheckedChange={(value) => setTheme(value ? "dark" : "light")}
+        onCheckedChange={(value) => setTheme(value ? "light" : "dark")}
         aria-label="Toggle dark mode"
       />
-      <Moon className="h-3 w-3" />
+      <Sun className="h-3 w-3" />
     </div>
   )
 }

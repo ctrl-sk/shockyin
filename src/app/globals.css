@@ -64,10 +64,15 @@
     cursor: none !important;
   }
   .logo-container {
+    position: fixed; /* Fix it to viewport */
+    top: 0;           /* Align to top */
+    left: 16px;          /* Align to left */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Correct justify-content for left alignment */
     align-items: center;
-  }
+    padding: 1rem;    /* Optional: add some spacing from edges */
+    z-index: 100;     /* Ensure it stays on top */
+  }  
   .logo {
     font-family: "DM Serif Text", serif;
     font-weight: 400;
@@ -76,17 +81,17 @@
     display: inline-block;
   }
   .logo h1 {
-    font-size: 4rem;
+    font-size: 2.2rem;
     z-index: 2;
     margin: 0;
   }
   .in-text {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     position: absolute;
-    bottom: -14px;
-    right: -28px;
+    bottom: -15px;
+    right: -17px;
   }
   .in-text #dot {
-    font-size: 3.8rem;
+    font-size: 2.8rem;
   }
 }

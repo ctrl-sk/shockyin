@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Roboto_Mono } from 'next/font/google';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BottomNav } from "@/components/bottom-nav";
@@ -9,10 +9,10 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-const rubik = Rubik({
-  variable: "--font-rubik",
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={robotoMono.className} suppressHydrationWarning>
       <body
-        className={`${rubik.variable} antialiased m-0 p-0`}
+        className={`antialiased m-0 p-0`}
       >
         <ThemeProvider
           attribute="class"
@@ -44,9 +44,7 @@ export default function RootLayout({
           {/* Fade overlay behind navigation */}
           <div className="fixed bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-30" />
           <BottomNav />
-          <div className="fixed top-4 right-4 z-50 sm:static sm:ml-auto">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
           <SpeedInsights />
           <Analytics />
         </ThemeProvider>

@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="mx-auto max-w-[640px] px-24 py-0">
+      <div className="mx-auto max-w-[640px] md:px-24 px-8 py-0">
         {/* Logo */}
         <div className="mb-8 logo-container">
           <div className="logo">
@@ -15,7 +15,7 @@ export default function Home() {
         {/* Description paragraphs */}
         <div className="space-y-8">
           <div>
-            <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-4 text-accent">
               Hi! I'm Shashank.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
