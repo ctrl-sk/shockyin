@@ -55,12 +55,12 @@ export function CustomCursor() {
         ) {
           const link = target.tagName === 'A' ? target : target.closest('a')!;
           const rect = link.getBoundingClientRect();
-        
-          cursor.style.backgroundColor = accentColor ? `hsl(${accentColor})` : defaultAccent;
+          cursor.style.backgroundColor = 'gray';
+          cursor.style.border = '0px solid transparent';
           cursor.style.borderRadius = window.getComputedStyle(link).borderRadius || '4px';
           cursor.style.width = `${rect.width}px`;
           cursor.style.height = `${rect.height}px`;
-          cursor.style.opacity = '0.4';
+          cursor.style.opacity = '0.2';
           cursor.style.transition = 'width 0.3s ease, height 0.3s ease';
           cursor.style.pointerEvents = 'none';
           cursor.style.transform = `translate3d(${rect.left + window.scrollX + rect.width / 2}px, ${rect.top + window.scrollY + rect.height / 2}px, 0) translate(-50%, -50%)`;

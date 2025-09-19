@@ -55,7 +55,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="mx-auto mt-12 max-w-[640px] px-6 py-12">
+    <div className="flex items-center justify-center min-h-screen">
+    <div className="mx-auto max-w-[640px] px-6 py-12">
       
       <Card>
         <CardHeader>
@@ -120,12 +121,13 @@ export default function Contact() {
                 className="px-4 py-2 rounded-full" 
                 disabled={isSubmitting || isSubmitted}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Send message"}
               </Button>
           </form>
         </CardContent>
       </Card>
       <div className="h-[48px]" />
+    </div>
     </div>
   );
 }
