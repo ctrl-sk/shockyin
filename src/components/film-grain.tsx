@@ -27,11 +27,11 @@ const FilmGrain = () => {
   return (
     <div
       ref={grainRef}
-      className="fixed inset-0 pointer-events-none z-[1] opacity-[0.6] dark:opacity-[0.9]"
+      className="fixed inset-0 pointer-events-none z-[1] opacity-[1] dark:opacity-[0.9]"
       style={{
-        backgroundImage: 'url("/noise.png")',
+        backgroundImage: 'url("/noise.webp")',
         mixBlendMode: 'overlay',
-        backgroundSize: '600px 600px',
+        backgroundSize: '800px 800px',
         backgroundRepeat: 'repeat',
       }}
     />
