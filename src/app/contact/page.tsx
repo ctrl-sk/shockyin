@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -56,26 +56,16 @@ export default function Contact() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-    <div className="mx-auto max-w-[640px] px-6 py-12">
-      
-      <Card>
-        <CardHeader>
-          <CardTitle>Send me a message</CardTitle>
-          <CardDescription>
-            Fill out the form below and I&apos;ll get back to you as soon as possible.
-          </CardDescription>
-        </CardHeader>
+    <div className="mx-auto w-full max-w-[640px] px-6 py-12">
+    <div className="mb-12">
+      <h1 className="text-lg font-semibold mb-4 text-accent">
+        Contact
+      </h1>
+    </div>
+      <Card className="bg-muted/40">
         <CardContent>
-          {isSubmitted && (
-            <div className="mb-6 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg">
-              <p className="text-green-800 dark:text-green-200 font-medium">
-                Thank you for your message! I&apos;ll get back to you soon.
-              </p>
-            </div>
-          )}
-          
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
+            <div className="pt-6 space-y-2">
               <Label htmlFor="name">Name *</Label>
               <Input
                 id="name"
@@ -85,7 +75,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Your full name"
-                className="w-full"
+                className="w-full border-foreground/30 bg-background/40"
               />
             </div>
 
@@ -99,7 +89,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="your.email@example.com"
-                className="w-full"
+                className="w-full border-foreground/30 bg-background/40"
               />
             </div>
 
@@ -112,17 +102,25 @@ export default function Contact() {
                 value={formData.comments}
                 onChange={handleInputChange}
                 placeholder="Tell me about your project or just say hello!"
-                className="w-full min-h-[120px]"
+                className="w-full border-foreground/30 bg-background/40 min-h-[120px]"
               />
             </div>
 
-              <Button 
-                type="submit" 
-                className="px-4 py-2 rounded-full" 
-                disabled={isSubmitting || isSubmitted}
-              >
-                {isSubmitting ? "Sending..." : "Send message"}
-              </Button>
+            <Button 
+              type="submit" 
+              className="px-4 py-2 rounded-full" 
+              disabled={isSubmitting || isSubmitted}
+            >
+              {isSubmitting ? "Sending..." : "Send message"}
+            </Button>
+
+            {isSubmitted && (
+              <div className="mb-6 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg">
+                <p className="text-green-800 dark:text-green-200 font-medium">
+                  Thank you for your message! I&apos;ll get back to you soon.
+                </p>
+              </div>
+            )}
           </form>
         </CardContent>
       </Card>

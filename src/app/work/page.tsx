@@ -23,38 +23,56 @@ const workExperience = [
   {
     company: "Mastercard",
     role: "Manager, Creative Studio",
-    duration: "2022 - Present",
+    duration: "2016 - present",
     description:
-      "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and driving technical decisions for a team of 8 engineers.",
+      "Over the last 9 years at Mastercard, I've donned many hats -- from researching and writing to designing reports and interactive demos. Today, I lead the design for the new website, vibe-code internal tools to help save outsourcing costs and collaborate with partners across the globe and the organisation to enhance the brand.",
     logo: "/mclogo.svg",
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
+    technologies: ["Researching", "Designing", "Writing", "Vibe coding", "Web design", "Interactive design"],
   },
   {
     company: "Hindustan Times",
     role: "Senior content producer",
-    duration: "2020 - 2022",
+    duration: "2015 - 2016",
     description:
-      "Built and maintained the core platform serving 100K+ users. Implemented real-time features, payment processing, and optimized database performance resulting in 40% faster load times.",
+      "Core editor of the integrated copy desk, writing breaking stories for print and the web. Covered the Bihar Legislative Assembly elections and collaborated with stringers/reporters across the country to develop well-rounded stories throughout my time at the English daily.",
     logo: "/htlogo.svg",
-    technologies: ["Vue.js", "Express.js", "MongoDB", "Redis", "Docker"],
+    technologies: ["Breaking news", "Election coverage", "Layout design", "Roving writer"],
   },
   {
     company: "Mindworks Global",
     role: "Copy editor",
-    duration: "2019 - 2020",
+    duration: "2013 - 2015",
     description:
-      "Developed responsive websites and web applications for diverse clients. Collaborated with designers to implement pixel-perfect UIs and optimized for performance across all devices.",
+      "Led the production of the Miami Herald International daily newspaper, from editing to layout. Worked with global clients to produce multiple monthly travel magazines, and wrote the guidelines for deliverables translated from various Indian languages.",
     logo: "/mwglogo.svg",
-    technologies: ["React", "Sass", "Webpack", "Figma", "Git"],
+    technologies: ["International journalism", "Travel", "News", "Layout", "Editing"],
   },
   {
-    company: "WebDev Inc",
-    role: "Junior Developer",
-    duration: "2018 - 2019",
+    company: "Open Magazine",
+    role: "Features intern",
+    duration: "2013",
     description:
-      "Started my professional journey building websites using HTML, CSS, and JavaScript. Gained experience in responsive design, cross-browser compatibility, and version control.",
-    logo: "💻",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
+      "The final internship brought me to Mumbai. Over my time at the renouned publisher, I wrote a double-page spread on my interview with Mr. Ian Livingstone, president of gaming behemoth Eidos, and a number of smaller articles about the happenings in the city and around the world.",
+    logo: "/openmagazinelogo.webp",
+    technologies: ["Features", "Interview", "Articles", "Reporting"],
+  },
+  {
+    company: "Percept Profile",
+    role: "Public relations intern",
+    duration: "2012",
+    description:
+      "Switched gears for my second internship to experience first-hand the other side of journalism — public relations. The first half of my two-fold internship spanned business development, focusing on highend restaurants & bars, luxury lifestyle brands and automobile manufacturers. For the second part, I put on my creative hat to ideate and develop communication strategies for our clients.",
+    logo: "/perceptlogo.webp",
+    technologies: ["Public relations", "Business development", "Creative pitch", "Design"],
+  },
+  {
+    company: "The Times of India",
+    role: "Editorial intern",
+    duration: "2011",
+    description:
+      "Working for the city edition of the newspaper, covered multiple live events — a singing competition and a writing competition. Secured two bylines and made my first foray into journalism in India.",
+    logo: "/toilogo.webp",
+    technologies: ["Reporting", "Writing", "Events"],
   },
 ];
 
@@ -140,7 +158,7 @@ export default function Work() {
                       {job.technologies.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 bg-secondary-foreground/10 text-secondary-foreground rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-secondary-foreground/10 text-secondary-foreground/60 rounded-full text-xs font-medium"
                         >
                           {tech}
                         </span>
