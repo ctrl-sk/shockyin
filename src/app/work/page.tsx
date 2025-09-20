@@ -27,7 +27,7 @@ const workExperience = [
     description:
       "Over the last 9 years at Mastercard, I've donned many hats -- from researching and writing to designing reports and interactive demos. Today, I lead the design for the new website, vibe-code internal tools to help save outsourcing costs and collaborate with partners across the globe and the organisation to enhance the brand.",
     logo: "/mclogo.svg",
-    technologies: ["Researching", "Designing", "Writing", "Vibe coding", "Web design", "Interactive design"],
+    technologies: ["Researching", "Designing", "Writing", "Coding", "Web", "Interactive"],
   },
   {
     company: "Hindustan Times",
@@ -140,8 +140,8 @@ export default function Work() {
                         )}
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-lg">{job.role}</CardTitle>
-                        <CardDescription className="text-lg font-semibold text-primary">
+                        <CardTitle className="text-md">{job.role}</CardTitle>
+                        <CardDescription className="text-md font-semibold text-primary">
                           {job.company}
                         </CardDescription>
                         <CardDescription className="text-sm text-muted-foreground">
