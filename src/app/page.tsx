@@ -19,7 +19,7 @@ export default function Home() {
               Hi! I'm Shashank.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A journalist-turned-marketing professional based in Gurugram, India. I write and edit, research and analyse, and design amazing things. I pride myself on lucid communication and being an easy to work with, friendly guy.
+              A journalist-turned-marketing professional based in Gurugram, India.  I write and edit, research and analyse, and design amazing things. Pride myself on lucid communication and being an easy to work with, friendly guy.
             </p>
           </div>
         </div>
